@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="theme-color" content="#ffffff">
+    <title>Laylow</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" id="Trinity" href="style1.css">
+    <link rel="stylesheet" type="text/css" id="Anderson" href="style2.css" disabled>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body class="layloweb">
+    <header>
+      <a id="logo" href="#">LAYLOW</a>
+      <input type="button" id="Menu" value="&#160;" class="boutonav">
+    </header>
+    <nav class="menu-container">
+      <ul>
+        <li><a href="#">Accueil</a></li>
+		<li><button id="boutonStyle" class="button">Passer du côté obscur</button></li>
+      </ul>
+      <span id="fermerMenu">&times;</span>
+    </nav>
+    <img class="logo-trinity" src="img/trinity-logo.png" alt="Logo de Trinity vert" title="Logo de Trinity">
+    <section class="carousel-container">
+    <section class="slider">
+      <input type="radio" name="carousel" id="t-1">
+      <input type="radio" name="carousel" id="t-2">
+      <input type="radio" name="carousel" id="t-3" checked="">
+      <input type="radio" name="carousel" id="t-4">
+      <input type="radio" name="carousel" id="t-5">
+      <section class="elements">
+        <label class="item" for="t-1">
+          <img alt="Cover de Trinityville" title="Cover de Trinityville" src="./img/trinityville.png">
+        </label>
+        <label class="item" for="t-2">
+          <img alt="Laylow - Trinity" title="Laylow - Trinity" src="./img/trinity-image.png">
+        </label>
+        <label class="item" for="t-3">
+          <img alt="Cover avant - Album" title="Cover avant - Album" src="./img/covers/laylow-trinity.jpg">
+        </label>
+        <label class="item" for="t-4">
+          <img alt="Cover arrière  - Album" title="Cover arrière  - Album" src="./img/covers/laylow-trinity-back.jpg">
+        </label>
+        <label class="item" for="t-5">
+          <iframe width="350" height="350" src="https://www.youtube.com/embed/dK0wD01sdNw"></iframe>
+        </label>
+      </section>
+      <section class="dots">
+        <label for="t-1"></label>
+        <label for="t-2"></label>
+        <label for="t-3"></label>
+        <label for="t-4"></label>
+        <label for="t-5"></label>
+      </section>
+    </section>
+  </section>
+  <section class="track-info">
+    <section class="track-info-text">
+      <h2>TRINITY</h2>
+      <p>2020</p>
+    </section>
+    <form style="display: inline" action="https://laylow.lnk.to/Trinity" method="get">
+      <button class="track-info-button">Écouter</button>
+    </form>
+  </section>
+  <section class="details">
+    <section class="details-text">
+      <h3>PRESENTATION</h3>
+      <p>Dans RAW-Z, on avait laissé Laylow en pleine introspection sur l’adulte qu’il est devenu : un « prince de sang-mêlé » aux sens engourdis, confronté à une société consumériste et confortable, sourdement rongée par les difficultés relationnelles, la mélancolie et la solitude.</p>
+      <p>Trinity est le refuge virtuel qu’il se crée pour échapper à cette réalité insipide. Un logiciel de stimulation émotionnelle par lequel il se sauve de sa torpeur. Durant l’écoute de cet album, l’auditeur est invité à expérimenter différentes formes d’émotions, comme autant de programmes proposés par le logiciel, toujours guidé par la voix de Trinity. Son taux d’adrénaline grimpera à l’écoute de Piranha Baby ou Akanizer , il sera pris dans le labyrinthe du sentiment amoureux avec Poizon ou Million Flowerz et absorbé par la mélancolie dans Nakré ou Logiciel Triste .</p> 
+      <p>La forte empreinte cinématographique de l’album et le soin donné à construire des ambiances sonores prenantes en font une expérience auditive qui inclut une puissante part visuelle. Pour autant, Trinity reste une oeuvre d’une rare sincérité. Pour son premier album, Laylow se livre entièrement et se pose en personnage principal d’un film audio qu’il a lui-même conçu. L’univers déployé est fictif mais le narrateur est bien réel. On retrouve dans Trinity plusieurs collaborations déjà croisées dans l’univers de Laylow : S.Pri Noir, Jok’Air, Wit ou encore Dioscures, qui signe la plupart des productions de l’album. Lomepal, Alpha Wann et le pianiste Sofiane Pamart complètent cette liste.</p>
+      <p>Laylow prouve encore qu’il est une des figures artistiques les plus créatives du paysage musical français. Souvent à contre-courant des codes rap, il déploie un univers technologique où la sentimentalité, l’egotrip et une certaine vision de l’époque cohabitent, toujours avec une puissante capacité d’incarnation. Bienvenue dans le programme Trinity.</p>
+    </section>
+  </section>
+     <section class="details">
+  <h3>Contactez-nous</h3>
+  <form class="contact-form">
+    <div class="details">
+      <p for="first-name">Prénom:</p>
+      <input type="text" id="first-name" name="first-name">
+    </div>
+    <div class="details">
+      <p for="last-name">Nom:</p>
+      <input type="text" id="last-name" name="last-name">
+    </div>
+    <div class="details">
+      <p for="message">Message:</p>
+      <textarea id="message" name="message" rows="5"></textarea>
+    </div>
+    <button type="submit" class="submit-button">Envoyer</button>
+  </form>
+</section>
+  <script>
+    document.getElementById('Menu').addEventListener('click', function() {
+      var menu = document.querySelector('.menu-container');
+      if (menu.style.right === '0px' || menu.style.right === '') {
+        menu.style.right = '-1000px';
+      } else {
+        menu.style.right = '0';
+      }
+    });
+  
+    document.getElementById('fermerMenu').addEventListener('click', function() {
+      var menu = document.querySelector('.menu-container');
+      menu.style.right = '-1000px'; 
+    });
+    
+    document.addEventListener('click', function(e) {
+    var menu = document.querySelector('.menu-container');
+    var button = document.getElementById('Menu');
+    if (!menu.contains(e.target) && e.target !== button) {
+      menu.style.right = '-1000px';
+    }
+  });
+  document.addEventListener('DOMContentLoaded', function () {
+  var switchButton = document.getElementById('boutonStyle');
+  var Trinity = document.getElementById('Trinity');
+  var Anderson = document.getElementById('Anderson');
+
+  switchButton.addEventListener('click', function () {
+    Trinity.disabled = !Trinity.disabled;
+    Anderson.disabled = !Anderson.disabled;
+  });
+});
+  </script>
+  </body>
+</html>

@@ -1,0 +1,511 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+* {
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0px;
+}
+
+@font-face {
+  font-family: "Heading Now-72Light";
+  src: url('fonts/HeadingNow-72Light.woff') format("woff");
+}
+
+@font-face {
+  font-family: "Heading Now-72Light Italic";
+  src: url('fonts/HeadingNow-72LightItalic.woff') format("woff");
+}
+
+@font-face {
+  font-family: "Heading Now-95Medium";
+  src: url('fonts/HeadingNow-83Book.woff') format("woff");
+}
+
+@font-face {
+  font-family: "Heading Now-87Extrabold";
+  src: url('fonts/HeadingNow-87Extrabold.woff') format("woff");
+}
+@font-face {
+  font-family: "Heading Now-83Book";
+  src: url('fonts/HeadingNow-95Medium.woff') format("woff");
+}
+
+@font-face {
+  font-family: 'Heading Now-86Bold';
+  src: url('fonts/HeadingNow-86Bold.woff') format("woff");
+}
+
+@font-face {
+  font-family: "Vast XXL-Bold";
+  src: url('fonts/VastXXL-Bold.woff') format("woff");
+}
+
+.layloweb {
+  background: linear-gradient(180deg, rgb(0.33, 25.06, 0.33) 40.62%, rgb(0, 0, 0) 100%);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.layloweb header{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  height: 70px;
+}
+.layloweb #logo{
+  position: absolute;
+  text-decoration: none;
+  cursor: pointer;
+  font-family: "Vast XXL-Bold";
+  font-weight: 700;
+  font-size: 30px;
+  color: #ffffff;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+  left: 20px;
+  top: 25px;
+  transition: all 0.5s
+}
+
+.layloweb #logo:hover{
+  color: #00FF22;
+  transform: scale(1.1); 
+  text-shadow: 0 0 10px rgba(0, 128, 0, 0.7);
+}
+.layloweb .boutonav {
+  position: sticky;
+  background-image: url( 'img/menu.svg' );
+  background-size:cover;
+  border: none;
+  background-color: transparent;
+  cursor:pointer;
+  width: 40px;
+  height: 40px;
+  right: 20px;
+  top: 20px;
+}
+.layloweb .logo-trinity{
+  position: sticky;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 13px;
+  width: 208px;
+  object-fit: cover;
+}
+
+.layloweb .navbar {
+  position: absolute;
+  width: 367px;
+  height: 36px;
+  top: 0;
+  left: 31px;
+}
+
+.track-info {
+  position: relative; 
+  background-color: rgba(0, 255, 87, 0.2);
+  border-radius: 20px; 
+  padding: 20px;
+  margin: 20px; 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  text-align: left; 
+}
+
+.track-info h2 {
+  color: #fff;
+  text-transform: uppercase;
+  font-family: "Heading Now-87Extrabold";
+  font-size: 25px; 
+}
+
+.track-info p {
+  font-family: "Heading Now-83Book";
+  margin-top: 5px;
+  color: #fff; 
+}
+
+.track-info button {
+  background-color: transparent;
+  text-transform: uppercase;
+  font-family: "Heading Now-83Book";
+  font-size: 18px;
+  border: 2px solid #00FF22;
+  color: #fff;
+  border-radius: 15px;
+  padding: 5px 10px 5px 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 0 10px rgba(0, 128, 0, 0.7); 
+}
+
+.track-info button:hover {
+  background-color: #00FF22;
+  color: black; 
+  transform: scale(1.1); 
+  box-shadow: 0 0 20px rgba(0, 128, 0, 0.9); 
+}
+
+.details {
+  position: relative; 
+  background-color: rgba(0, 255, 87, 0.2);
+  border-radius: 20px; 
+  padding: 20px;
+  margin: 20px; 
+  display: block; 
+  justify-content: space-between; 
+  align-items: center; 
+  text-align: left; 
+}
+
+.details h3 {
+  color: #fff;
+  text-transform: uppercase;
+  font-family: "Heading Now-87Extrabold";
+  font-size: 25px; 
+}
+
+.details p {
+  font-family: "Heading Now-72Light";
+  margin-top: 8px;
+  line-height: 20px;
+  color: #fff; 
+}
+
+.carousel-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.slider {
+	width: 100%;
+}
+.slider input {
+	display: none;
+}
+.elements {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 350px;
+	perspective: 1000px;
+	overflow: hidden;
+}
+
+.elements .item {
+  display: flex;
+  flex-direction: column; /* Pour empêcher le texte et le titre de s'étendre horizontalement */
+  align-items: center;
+  position: absolute;
+  box-sizing: border-box;
+  background-color: transparent;
+  width: 350px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.4s;
+  -webkit-transform-style: preserve-3d;
+  user-select: none;
+  cursor: pointer;
+}
+
+.elements .item img {
+	width: 350px;
+  border-radius: 12px;
+  display: flex; 
+  align-items: center;
+}
+
+.elements .item p {
+	color: #ddd;
+}
+.elements .item h2 {
+	font-size: 14px;
+}
+.dots {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.dots label {
+	display: block;
+	height: 5px;
+	width: 5px;
+	border-radius: 50%;
+	cursor: pointer;
+	background-color: #00ff22;
+	margin: 20px 8px 7px 7px;
+	transition: transform 0.2s, color 0.2s;
+}
+
+.menu-container {
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  right: -1000px;
+  width: 350px;
+  height: 100%;
+  background-color: #000000;
+  padding-top: 60px;
+  transition: right 0.3s ease;
+}
+
+.menu-container ul {
+  list-style: none;
+  padding: 0;
+}
+
+.menu-container li {
+  padding: 20px 0px 0px 20px;
+  text-align: left;
+}
+
+.menu-container a {
+  width: 300px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #fff;
+  font-family: "Heading Now-95Medium";
+  font-size: 18px;
+  display: block;
+}
+
+.menu-container a:hover {
+  color: #00FF22;
+  text-shadow: 0 0 20px rgba(0, 128, 0, 0.9); 
+}
+
+#fermerMenu {
+  position: absolute;
+  top: -5px;
+  right: 15px;
+  font-family: "HeadingNow-72Light";
+  font-size: 90px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.menu-container button {
+    background-color: transparent;
+    text-transform: uppercase;
+    font-family: "Heading Now-83Book";
+    font-size: 13px;
+    border: 2px solid #00FF22;
+    color: #fff;
+    border-radius: 15px;
+    padding: 5px 10px 5px 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+    }
+  }
+
+
+
+/* Premier */
+#t-1:checked ~ .dots label[for="t-1"] {
+	transform: scale(2);
+	background-color: #fff;
+}
+#t-1:checked ~ .dots label[for="t-2"] {
+	transform: scale(1.5);
+}
+#t-1:checked ~ .elements label[for="t-1"] {
+	z-index: 4;
+}
+#t-1:checked ~ .elements label[for="t-2"] {
+	transform: translateX(300px) translateZ(-90px);
+	z-index: 3;
+}
+#t-1:checked ~ .elements label[for="t-3"] {
+	transform: translateX(600px) translateZ(-180px);
+	z-index: 2;
+}
+#t-1:checked ~ .elements label[for="t-4"] {
+	transform: translateX(900px) translateZ(-270px);
+	z-index: 1;
+}
+#t-1:checked ~ .elements label[for="t-5"] {
+	transform: translateX(1200px) translateZ(-360px);
+}
+
+/* Deuxième */
+#t-2:checked ~ .dots label[for="t-1"] {
+	transform: scale(1.5);
+}
+#t-2:checked ~ .dots label[for="t-2"] {
+	transform: scale(2);
+	background-color: #fff;
+}
+#t-2:checked ~ .dots label[for="t-3"] {
+	transform: scale(1.5);
+}
+#t-2:checked ~ .elements label[for="t-1"] {
+	transform: translateX(-300px) translateZ(-90px);
+}
+#t-2:checked ~ .elements label[for="t-2"] {
+	z-index: 3;
+}
+#t-2:checked ~ .elements label[for="t-3"] {
+	transform: translateX(300px) translateZ(-90px);
+	z-index: 2;
+}
+#t-2:checked ~ .elements label[for="t-4"] {
+	transform: translateX(600px) translateZ(-180px);
+	z-index: 1;
+}
+#t-2:checked ~ .elements label[for="t-5"] {
+	transform: translateX(900px) translateZ(-270px);
+}
+
+/* Troisième */
+#t-3:checked ~ .dots label[for="t-2"] {
+	transform: scale(1.5);
+}
+#t-3:checked ~ .dots label[for="t-3"] {
+	transform: scale(2);
+	background-color: #fff;
+}
+#t-3:checked ~ .dots label[for="t-4"] {
+	transform: scale(1.5);
+}
+#t-3:checked ~ .elements label[for="t-1"] {
+	transform: translateX(-600px) translateZ(-180px);
+}
+#t-3:checked ~ .elements label[for="t-2"] {
+	transform: translateX(-300px) translateZ(-90px);
+}
+#t-3:checked ~ .elements label[for="t-3"] {
+	z-index: 3;
+}
+#t-3:checked ~ .elements label[for="t-4"] {
+	transform: translateX(300px) translateZ(-90px);
+	z-index: 2;
+}
+#t-3:checked ~ .elements label[for="t-5"] {
+	transform: translateX(600px) translateZ(-180px);
+}
+
+/* Quatrième */
+#t-4:checked ~ .dots label[for="t-3"] {
+	transform: scale(1.5);
+}
+#t-4:checked ~ .dots label[for="t-4"] {
+	transform: scale(2);
+	background-color: #fff;
+}
+#t-4:checked ~ .dots label[for="t-5"] {
+	transform: scale(1.5);
+}
+#t-4:checked ~ .elements label[for="t-1"] {
+	transform: translateX(-900px) translateZ(-270px);
+}
+#t-4:checked ~ .elements label[for="t-2"] {
+	transform: translateX(-600px) translateZ(-180px);
+}
+#t-4:checked ~ .elements label[for="t-3"] {
+	transform: translateX(-300px) translateZ(-90px);
+	z-index: 2;
+}
+#t-4:checked ~ .elements label[for="t-4"] {
+	z-index: 3;
+}
+#t-4:checked ~ .elements label[for="t-5"] {
+	transform: translateX(300px) translateZ(-90px);
+}
+
+/* Cinquième */
+#t-5:checked ~ .dots label[for="t-4"] {
+	transform: scale(1.5);
+}
+#t-5:checked ~ .dots label[for="t-5"] {
+	transform: scale(2);
+	background-color: #fff;
+}
+#t-5:checked ~ .elements label[for="t-1"] {
+	transform: translateX(-1200px) translateZ(-360px);
+}
+#t-5:checked ~ .elements label[for="t-2"] {
+	transform: translateX(-900px) translateZ(-270px);
+	z-index: 1;
+}
+#t-5:checked ~ .elements label[for="t-3"] {
+	transform: translateX(-600px) translateZ(-180px);
+	z-index: 2;
+}
+#t-5:checked ~ .elements label[for="t-4"] {
+	transform: translateX(-300px) translateZ(-90px);
+	z-index: 3;
+}
+#t-5:checked ~ .elements label[for="t-5"] {
+	z-index: 4;
+}
+
+
+@media (max-width: 600px) {
+  .track-info h2 {
+    color: #fff;
+    text-transform: uppercase;
+    font-family: "Heading Now-87Extrabold";
+    font-size: 20px; 
+  }
+  .track-info p {
+    font-family: "Heading Now-83Book";
+    font-size: 15px; 
+    margin-top: 5px;
+    color: #fff; 
+  }
+  }
+  
+  @media (max-width: 400px) {
+    .track-info h2 {
+      color: #fff;
+      text-transform: uppercase;
+      font-family: "Heading Now-87Extrabold";
+      font-size: 15px; 
+    }
+
+    .track-info p {
+      font-family: "Heading Now-83Book";
+      font-size: 12px; 
+      margin-top: 5px;
+      color: #fff; 
+    }
+    
+    .track-info button {
+      background-color: transparent;
+      text-transform: uppercase;
+      font-family: "Heading Now-83Book";
+      font-size: 13px;
+      border: 2px solid #00FF22;
+      color: #fff;
+      border-radius: 15px;
+      padding: 5px 10px 5px 10px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+  }
+
+    @media screen and (max-width: 768px) {
+      .menu-container {
+        width: 100%;  
+        padding-top: 15px; 
+      }
+    
+      #closeMenu {
+        top: 10px;
+        right: 10px;
+      }
+    
+      .menu-container ul {
+        padding: 0 15px; 
+      }
+    
+      .menu-container li {
+        text-align: left;
+      }
+    }
